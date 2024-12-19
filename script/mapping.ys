@@ -1,0 +1,10 @@
+read_verilog ./tmp/rtl.v
+proc
+fsm
+flatten
+synth -auto-top
+dfflibmap -liberty ./lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+abc -liberty ./lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
+stat
+
+write_verilog -noattr ./tmp/pm.v
