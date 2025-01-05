@@ -67,7 +67,9 @@ def report_ppa(verilog_path):
     
 
 if __name__ == '__main__':
-    for v_path in glob.glob('./trial_data_zhengyuan/*/*.v'):
+    for v_path in glob.glob('./problem_case/*/*.v'):
+        if '15456_rewritten' not in v_path:
+            continue
         print('RTL path:', v_path)
         area, delay = report_ppa(v_path)
         print('Area: {:.2f}, Delay: {:.2f} ps'.format(area, delay))        

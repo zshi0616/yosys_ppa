@@ -7,4 +7,4 @@ dfflibmap -liberty ./lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
 abc -liberty ./lib/sky130_fd_sc_hd__ff_n40C_1v95.lib
 stat
 
-write_verilog -noattr ./tmp/pm.v
+write_verilog -simple-lhs -noattr ./tmp/pm.v 
